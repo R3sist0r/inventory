@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  carton_id: 1
+  invoice_line_id: 1
+
+two:
+  carton_id: 1
+  invoice_line_id: 1

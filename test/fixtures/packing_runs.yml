@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  packing_date: 2013-05-14
+  product_id: 1
+  production_run_id: 1
+
+two:
+  packing_date: 2013-05-14
+  product_id: 1
+  production_run_id: 1

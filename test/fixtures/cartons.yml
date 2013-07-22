@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  packing_run_id: 1
+  barcode: MyString
+
+two:
+  packing_run_id: 1
+  barcode: MyString
