@@ -12,6 +12,7 @@ Happy::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get '/api/production_recipe/:id', to: 'recipes#load_recipe'
+  get '/api/production_run/:id', to: 'recipes#load_production_run'
 
 
   # The priority is based upon order of creation:
