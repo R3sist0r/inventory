@@ -55,14 +55,15 @@ ActiveAdmin.register ProductionRun do
       f.input :production_date
       if f.object.new_record?
         f.input :recipe, :input_html => { :onchange => "loadRecipe()" } 
-      else 
-       render :update do |page|
-          page.replace_html  'user_list', :partial => 'user', :collection => @users
-        page.visual_effect :highlight, 'user_list'
-        end
-        "hey"
+      else
+        f.form_buffers.last << javascript_tag("loadRecipeEdit(3, 15)")
+        # @new_toggle = true;
+        # f.input :recipe
+        # 
       end
     end
     f.actions
   end
+
+
 end

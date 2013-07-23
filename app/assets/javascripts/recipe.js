@@ -26,6 +26,16 @@ function loadRecipe() {
 	});
 }
 
+
+function loadRecipeEdit(recipe_id, production_run_id) {
+	
+	$.getJSON('/api/production_recipe/'+recipe_id, function(data) {
+		var template = Handlebars.compile(recipe_template);
+		var html = template({line: data});
+		$(html).insertAfter('#main_content form .inputs');
+	});
+}
+
 function lockRecipe() {
 	$('#production_run_recipe_id').prop("disabled", true);
 }
