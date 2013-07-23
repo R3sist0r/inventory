@@ -9,6 +9,7 @@ gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
 gem 'sqlite3'
+gem 'pg'
 
 group :development do
   gem "rails-erd"
