@@ -1,4 +1,5 @@
 ActiveAdmin.register PackingRun do
+  menu :parent => "Pack"
   index do
     column :product
     column :packing_date

@@ -1,4 +1,5 @@
 ActiveAdmin.register Recipe do
+  menu :parent => "Produce", :priority => 3
   controller do
     def scoped_collection
       Recipe.includes(:recipes_raw_materials)

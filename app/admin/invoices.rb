@@ -1,4 +1,5 @@
 ActiveAdmin.register Invoice do
+  menu :parent => "Sell", :priority => 1
   controller do
     def scoped_collection
       Invoice.includes(:invoice_lines)

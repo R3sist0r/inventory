@@ -1,4 +1,19 @@
 ActiveAdmin.register ProductionRun do
+  
+  menu :parent => "Produce", :priority => 3
+
+  filter :name
+  filter :recipe
+  filter :production_date
+  filter :recommended_best_before
+
+  index do
+    column :id
+    column :name
+    column :production_date
+    actions
+  end
+
   controller do
     def scoped_collection
       ProductionRun.includes(:production_run_ingredients)
@@ -56,7 +71,7 @@ ActiveAdmin.register ProductionRun do
       if f.object.new_record?
         f.input :recipe, :input_html => { :onchange => "loadRecipe()" } 
       else
-        f.form_buffers.last << javascript_tag("loadRecipeEdit(3, 15)")
+        f.form_buffers.last << javascript_tag("loadRecipeEdit(18)")
         # @new_toggle = true;
         # f.input :recipe
         # 
