@@ -14,11 +14,12 @@ ActiveAdmin.register RawMaterial do
       row :id
       row :name
       row "Quantity on hand" do |raw_material|
-      	quantity = 0
-      	RawMaterialsStock.where(:raw_material_id => raw_material.id).each do |stock|
-      		quantity = quantity + stock.qty
-      	end
-      	quantity
+      	raw_material.qty
+        # quantity = 0
+      	# RawMaterialsStock.where(:raw_material_id => raw_material.id).each do |stock|
+      	# 	quantity = quantity + stock.qty
+      	# end
+      	# quantity
       end
 
       row "Stock on hand" do 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730042252) do
+ActiveRecord::Schema.define(:version => 20130806002606) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130730042252) do
     t.integer "production_run_id"
     t.integer "raw_materials_stock_id"
     t.float   "adjustment_qty"
+    t.float   "TotalUsed"
   end
 
   create_table "production_runs", :force => true do |t|
@@ -108,11 +109,11 @@ ActiveRecord::Schema.define(:version => 20130730042252) do
 
   create_table "raw_materials_stocks", :force => true do |t|
     t.integer  "raw_material_id"
-    t.integer  "qty"
+    t.string   "qty"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "batch_code"
-    t.date     "RecievedDate"
+    t.date     "recieved_date"
   end
 
   create_table "recipes", :force => true do |t|
