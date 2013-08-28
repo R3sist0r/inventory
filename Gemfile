@@ -7,7 +7,7 @@ gem 'rails', '3.2.9'
 
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
-
+gem 'rails3-jquery-autocomplete'
 gem 'pg'
 
 group :development do
@@ -28,7 +28,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# gem "jquery-rails", "2.3.0"
 gem 'ruby-units'
+gem "jquery-ui-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

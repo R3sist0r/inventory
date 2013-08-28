@@ -8,6 +8,7 @@ ActiveAdmin.register ProductionRun do
   filter :recommended_best_before
 
   index do
+    selectable_column
     column :id
     column :name
     column :production_date

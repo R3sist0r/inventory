@@ -1,3 +1,49 @@
+
+module ActiveAdmin
+ class FormBuilder < ::Formtastic::FormBuilder
+  def titled_has_many(association, options = {}, &block)
+   options = { :for => association }.merge(options)
+   options[:class] ||= ""
+   options[:class] << "inputs has_many_fields"
+
+   # Set the Header
+   header = options[:header] || association.to_s
+
+   # Add Delete Links
+   form_block = proc do |has_many_form|
+     block.call(has_many_form) + if has_many_form.object.new_record?
+                                  template.content_tag :li do
+                                    template.link_to I18n.t('active_admin.has_many_delete'), "#", :onclick => "$(this).closest('.has_many_fields').remove(); return false;", :class => "button"
+                                  end
+                                else
+                                end
+  end
+
+  content = with_new_form_buffer do
+    template.content_tag :div, :class => "has_many #{association}" do
+      form_buffers.last << template.content_tag(:h3, header.titlecase) #using header
+      inputs options, &form_block
+
+      # Capture the ADD JS
+      js = with_new_form_buffer do
+        inputs_for_nested_attributes  :for => [association, object.class.reflect_on_association(association).klass.new],
+                                      :class => "inputs has_many_fields",
+                                      :for_options => {
+                                        :child_index => "NEW_RECORD"
+                                      }, &form_block
+      end
+
+      js = template.escape_javascript(js)
+      js = template.link_to I18n.t('active_admin.has_many_new', :model => association.to_s.singularize.titlecase), "#", :onclick => "$(this).before('#{js}'.replace(/NEW_RECORD/g, new Date().getTime())); return false;", :class => "button"
+
+      form_buffers.last << js.html_safe
+    end
+  end
+  form_buffers.last << content.html_safe
+  end
+ end
+end
+
 ActiveAdmin.setup do |config|
 
   # == Site Title
@@ -205,6 +251,4 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
-
-
 end

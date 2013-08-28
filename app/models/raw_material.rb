@@ -6,9 +6,13 @@ class RawMaterial < ActiveRecord::Base
   attr_reader :qty
 
   def qty
-    quantity = 0
+    quantity = nil
   	RawMaterialsStock.where(:raw_material_id => id).each do |stock|
-  		quantity = quantity + stock.qty
+      if quantity != nil
+  		  quantity = quantity + Unit.new(stock.qty)   
+      else
+        quantity = Unit.new(stock.qty)   
+      end
   	end
   	quantity
   end

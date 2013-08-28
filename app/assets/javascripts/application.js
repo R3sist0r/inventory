@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require recipe
 //= require handlebars
-
+//= require active_admin

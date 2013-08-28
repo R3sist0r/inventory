@@ -1,6 +1,7 @@
 ActiveAdmin.register PackingRun do
   menu :parent => "Pack"
   index do
+    selectable_column
     column :product
     column :packing_date
     column :best_before

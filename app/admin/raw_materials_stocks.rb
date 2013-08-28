@@ -2,11 +2,12 @@ ActiveAdmin.register RawMaterialsStock do
   menu :parent => "Produce", :priority => 3
 
   index do
+    selectable_column
     column :id
     column :batch_code
     column :raw_material
     column :qty
-    column :RecievedDate
+    column :recieved_date
     actions
   end
 

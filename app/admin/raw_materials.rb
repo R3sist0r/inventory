@@ -2,6 +2,7 @@ ActiveAdmin.register RawMaterial do
   menu :parent => "Produce", :priority => 3
 
   index do
+    selectable_column
     column :id
     column :name
     actions

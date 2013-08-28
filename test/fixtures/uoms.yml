@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  abbrevian: MyString
+  parent_id: 1
+  conversion: 1.5
+
+two:
+  name: MyString
+  abbrevian: MyString
+  parent_id: 1
+  conversion: 1.5
