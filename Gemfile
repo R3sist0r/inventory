@@ -9,6 +9,12 @@ gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'rails3-jquery-autocomplete'
 gem 'pg'
+gem "cocoon"
+
+gem "haml-rails"
+
+gem 'sass-rails',   '~> 3.2.3'
+gem 'bootstrap-sass', '~> 2.1.1.0'
 
 group :development do
   gem "rails-erd"

@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require recipe
+//= require cocoon
 //= require handlebars
 //= require active_admin

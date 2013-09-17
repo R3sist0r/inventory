@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130821234212) do
+ActiveRecord::Schema.define(:version => 20130917025817) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,33 @@ ActiveRecord::Schema.define(:version => 20130821234212) do
     t.string   "name"
   end
 
+  create_table "item_conversions", :force => true do |t|
+    t.integer "item_id"
+    t.integer "contains_item_id"
+    t.decimal "conversion"
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "physical_measure"
+    t.boolean  "physical_meaning"
+    t.integer  "parent_id"
+    t.string   "link_type"
+    t.string   "base_unit"
+    t.decimal  "conversion"
+  end
+
+  create_table "items_stocks", :force => true do |t|
+    t.integer  "item_id"
+    t.string   "qty"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "batch_code"
+    t.date     "recieved_date"
+  end
+
   create_table "packing_runs", :force => true do |t|
     t.date     "packing_date"
     t.integer  "product_id"
@@ -94,11 +121,17 @@ ActiveRecord::Schema.define(:version => 20130821234212) do
   end
 
   create_table "products", :force => true do |t|
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "name"
     t.text     "description"
     t.integer  "recipe_id"
+    t.string   "physical_measure"
+    t.boolean  "physical_meaning"
+    t.integer  "parent_id"
+    t.string   "link_type"
+    t.string   "base_unit"
+    t.decimal  "conversion"
   end
 
   create_table "raw_materials", :force => true do |t|
@@ -109,11 +142,11 @@ ActiveRecord::Schema.define(:version => 20130821234212) do
 
   create_table "raw_materials_stocks", :force => true do |t|
     t.integer  "raw_material_id"
-    t.string   "qty"
+    t.integer  "qty"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "batch_code"
-    t.date     "recieved_date"
+    t.date     "RecievedDate"
   end
 
   create_table "recipes", :force => true do |t|

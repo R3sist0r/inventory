@@ -1,13 +1,6 @@
 ActiveAdmin.register Product do
 	menu :parent => "Sell", :priority => 3
 
-	collection_action :autocomplete_admin_user_email, :method => :get
-
-controller do
-  autocomplete :admin_user, :email
-end
-
-
 	index do
 		selectable_column
 		column :id
@@ -15,7 +8,15 @@ end
 		column :created_at
 		actions
 	end
+
+  # 	index :as => :block do |product|
+  # 		table :for => product do
+		#   th :for => product do
+		# 	   product.name
+		#   end
+		# end
+  # 	end
  
-    filter :name
+    filter :name	
  
 end

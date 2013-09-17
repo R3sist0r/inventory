@@ -8,8 +8,10 @@
 // $sidebar-width: 242px;
 
 // Active Admin's got SASS!
+// @import "bootstrap";
 @import "active_admin/mixins";
 @import "active_admin/base";
+
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
@@ -27,3 +29,63 @@
 // .active_admin       applies to any Active Admin namespace
 // .admin_namespace    applies to the admin namespace (eg: /admin)
 // .other_namespace    applies to a custom namespace named other (eg: /other)
+
+
+.active_admin {
+	.index_row {
+		width: 95%;
+		border-top: 2px solid gray;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		border-right: 50px;
+		padding-left: 50px !important;
+		background-color: #E8E8E8;
+	}
+
+	.col_name {
+		font: bold 12pt Helvetica, Arial, sans-serif;
+		display: table-cell; 
+		vertical-align: middle;
+		width: 300px;
+	}
+
+	.col {
+		display: table-cell;
+		width: 200px;
+	}
+
+	.col_actions {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		padding-right: 40px;
+		float:right;
+	}
+
+	.col_actions_child {
+		// padding-top: 8px;
+		// padding-bottom: 8px;
+		padding-right: 40px;
+		float:right;
+	}
+
+	.row_child {
+		width: 90%;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		margin-left: 70px !important;
+	}
+
+	.col_name_child {
+		width: 280px;
+		display: table-cell;
+
+	}
+	.oddrow {
+		background-color: white;
+	}
+	.evenrow {
+		background-color: #E8E8E8;
+	}
+
+}

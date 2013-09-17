@@ -6,3 +6,4 @@
 // = require active_admin/application
 
 //= require autocomplete-rails
+//= require bootstrap
